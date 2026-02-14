@@ -53,6 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
             imagePreview.src = e.target.result;
             previewContainer.style.display = 'flex';
             resultSection.style.display = 'none'; // Hide previous results
+            predictBtn.disabled = false; // Enable predict button
         };
         reader.readAsDataURL(file);
     }
@@ -101,7 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('description').innerText = data.description;
         document.getElementById('treatment').innerText = data.treatment;
         document.getElementById('prevention').innerText = data.prevention;
-        
+
         resultSection.style.display = 'block';
         resultSection.scrollIntoView({ behavior: 'smooth' });
     }
@@ -123,7 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function loadHistory() {
         const history = JSON.parse(localStorage.getItem('agroHistory')) || [];
         historyList.innerHTML = '';
-        
+
         if (history.length === 0) {
             historyList.innerHTML = '<li style="text-align:center; color:#666;">No history yet.</li>';
             return;
@@ -143,7 +144,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    window.deleteHistoryItem = function(index) {
+    window.deleteHistoryItem = function (index) {
         const history = JSON.parse(localStorage.getItem('agroHistory')) || [];
         history.splice(index, 1);
         localStorage.setItem('agroHistory', JSON.stringify(history));
