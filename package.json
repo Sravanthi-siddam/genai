@@ -1,0 +1,17 @@
+{
+  "name": "agrodetect-ai",
+  "version": "1.0.0",
+  "description": "Plant Disease Classification Engine",
+  "main": "index.js",
+  "scripts": {
+    "start": "python app.py"
+  },
+  "keywords": [
+    "ai",
+    "agriculture",
+    "plant-disease",
+    "classification"
+  ],
+  "author": "Antigravity",
+  "license": "ISC"
+}

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgroDetect AI - Plant Disease Classification</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>AgroDetect AI</h1>
+        <p>Advanced Plant Disease Classification Engine</p>
+    </header>
+
+    <div class="container">
+        <!-- Main Interface -->
+        <main>
+            <div class="card">
+                <div id="uploadSection" class="upload-section">
+                    <div class="upload-icon">📷</div>
+                    <h3>Drag & Drop or Click to Upload</h3>
+                    <p>Supported formats: JPG, PNG, JPEG</p>
+                    <input type="file" id="imageInput" accept="image/*">
+                </div>
+
+                <div id="previewContainer" class="preview-container">
+                    <img id="imagePreview" src="" alt="Image Preview">
+                </div>
+
+                <div style="text-align: center;">
+                    <button id="predictBtn" class="btn" disabled>Analyze Plant</button>
+                </div>
+
+                <div id="loader" class="loader"></div>
+
+                <div id="resultSection" class="result-section">
+                    <h2 id="diseaseName" class="disease-name">Disease Name</h2>
+                    <span id="confidenceScore" class="confidence">98%</span>
+                    
+                    <div class="info-group">
+                        <span class="info-label">Description:</span>
+                        <p id="description">...</p>
+                    </div>
+
+                    <div class="info-group">
+                        <span class="info-label">Treatment:</span>
+                        <p id="treatment">...</p>
+                    </div>
+
+                    <div class="info-group">
+                        <span class="info-label">Prevention:</span>
+                        <p id="prevention">...</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Sidebar / History -->
+        <aside>
+            <div class="card">
+                <h2>Prediction History</h2>
+                <ul id="historyList" class="history-list">
+                    <!-- History items will be injected here -->
+                </ul>
+            </div>
+        </aside>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
